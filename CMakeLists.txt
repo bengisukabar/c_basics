@@ -1,7 +1,5 @@
-cmake_minimum_required(VERSION 4.0)
-project(c_basics C)
+cmake_minimum_required(VERSION 3.10)
+project(c_basics)
 
-set(CMAKE_C_STANDARD 11)
-
-add_executable(c_basics main.c
-        calculator/calculator.c)
+add_subdirectory(calculator)
+add_subdirectory(guess-number)
