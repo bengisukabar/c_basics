@@ -2,15 +2,18 @@
 #include <stdlib.h>
 #include <time.h>
 
-int main()
- {
-     int secretNumber;
-     int guessNumber;
-     int attempts=0;
-     srand(time(NULL));
-     secretNumber = rand()%100+1;
-    while (1)
-    {
+int generateSecretNumber()
+{
+    return rand() % 100+1;
+}
+void playGame()
+{
+    int secretNumber = generateSecretNumber();
+    int guessNumber;
+    int attempts=0;
+
+
+    while (1){
         printf("Enter your guess between 1-100:\n");
         scanf("%d",&guessNumber);
         attempts++;
@@ -27,5 +30,13 @@ int main()
             break;
         }
     }
+}
+int main()
+{
+    srand(time(NULL));
+    playGame();
     return 0;
- }
+}
+
+
+
